@@ -1,17 +1,17 @@
-class PerpustakaanManager:             # Class untuk mengelola data perpustakaan
+class PerpustakaanManager:    # Class untuk mengelola data perpustakaan
     def __init__(self):
-        self.daftar = []                # menampung semua objek koleksi
+        self.daftar = []
     
     def tambah(self, koleksi_baru):
-        self.daftar.append(koleksi_baru)          # menerima objek koleksi yg sudah jadi dari main.py, lalu menyimpannya
+        self.daftar.append(koleksi_baru)
         return True
 
-    def ambil_semua(self):                  # mengembalikan isi list daftar koleksi
+    def ambil_semua(self):
         return self.daftar
 
-    def hapus(self, kode):                  # mencari objek berdasarkan kode, menghapusnya, dan mengembalikan status sukses
+    def hapus(self, kode):
         for i, koleksi in enumerate(self.daftar):
             if koleksi.kode == kode:
                 self.daftar.pop(i)
-                return True            # jika berhasil dihapus
-        return False             #jika kode tidak ditemukan
+                return True
+        return False
