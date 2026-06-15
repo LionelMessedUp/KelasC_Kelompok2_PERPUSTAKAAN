@@ -1,34 +1,30 @@
-from koleksi import perpustakaan
-
-class buku(perpustakaan):
-    def __init__(self, kode, judul, tahun, pengarang, penerbit):
-        super().__init__(kode, tahun, judul, penerbit)
+class Buku(Koleksi):
+    def __init__(self, kode, judul, tahun,
+                 pengarang, penerbit):
+        super().__init__(kode, judul, tahun)
         self.pengarang = pengarang
+        self.penerbit = penerbit
 
-    def tampilkan(self, no):
-        print(f"""
-Koleksi {no}:
-Jenis        : Buku
-Kode Koleksi : {self.kode}
-Judul        : {self.judul}
-Thn Terbit   : {self.tahun}
-Pengarang    : {self.pengarang}
-Penerbit     : {self.penerbit}
-""")
+    def tampilkan(self):
+        print("\n=== DATA BUKU ===")
+        print("Kode       :", self.kode)
+        print("Judul      :", self.judul)
+        print("Tahun      :", self.tahun)
+        print("Pengarang  :", self.pengarang)
+        print("Penerbit   :", self.penerbit)
 
 
-class majalah(perpustakaan):
-    def __init__(self, kode, judul, tahun, edisi, penerbit):
-        super().__init__(kode, tahun, judul, penerbit)
+class Majalah(Koleksi):
+    def __init__(self, kode, judul, tahun,
+                 penerbit, edisi):
+        super().__init__(kode, judul, tahun)
+        self.penerbit = penerbit
         self.edisi = edisi
 
-    def tampilkan(self, no):
-        print(f"""
-Koleksi {no}:
-Jenis        : Majalah
-Kode Koleksi : {self.kode}
-Judul        : {self.judul}
-Tahun Terbit : {self.tahun}
-Penerbit     : {self.penerbit}
-Edisi        : {self.edisi}
-""")
+    def tampilkan(self):
+        print("\n=== DATA MAJALAH ===")
+        print("Kode       :", self.kode)
+        print("Judul      :", self.judul)
+        print("Tahun      :", self.tahun)
+        print("Penerbit   :", self.penerbit)
+        print("Edisi      :", self.edisi)
