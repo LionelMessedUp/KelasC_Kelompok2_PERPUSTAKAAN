@@ -1,4 +1,4 @@
-class PerpustakaanManager:             # class untuk mengelola data perpustakaan
+class PerpustakaanManager:             # Class untuk mengelola data perpustakaan
     def __init__(self):
         self.daftar = []                # menampung semua objek koleksi
     
