@@ -1,19 +1,30 @@
-from koleksi import perpustakaan
+from koleksi import perpustakaan, abstractmethod
 
-class jurnal(perpustakaan):
-    def __init__(self, kode, judul, tahun, tanggal, impact_factor, penerbit, bidang_studi):
-        super().__init__(kode, tahun, judul, penerbit)
-        self.tanggal = tanggal
-        self.impact_factor = impact_factor
+class Jurnal(Koleksi):
+    def __init__(self, kode, judul, tahun, penerbit, bidang_studi, impact_factor):
+        super().__init__(kode, judul, tahun, penerbit)
         self.bidang_studi = bidang_studi
+        self.impact_factor = impact_factor
+        
+    def tampilkan_info(self):
+        print(f"Jenis        : Jurnal")
+        print(f"Kode Koleksi : {self.kode}")
+        print(f"Judul        : {self.judul}")
+        print(f"Thn Terbit   : {self.tahun}")
+        print(f"Penerbit     : {self.penerbit}")
+        print(f"Impact Factor: {self.impact_factor}")
+        print(f"Bidang Studi : {self.bidang_studi}")
+        
+class DVDFilm(Koleksi):
+    def __init__(self, kode, judul, tahun, bidang_ilmu, durasi, penerbit="Tidak Ada"):
+        super().__init__(kode, judul, tahun, penerbit)
+        self.bidang_ilmu = bidang_ilmu
+        self.durasi = durasi
 
-    def tampilkan(self, no):
-        print(f"Koleksi nomor{no}: \n Jenis Koleksi: Jurnal \n Kode Koleksi: {self.kode} \n Judul Jurnal: {self.judul} \n Tahun terbit: {self.tahun} \n Tanggal Terbit: {self.tanggal} \n Impact Factor: {self.impact_factor} \n Bidang Studi: {self.bidang_studi} ")
-
-class DVD(perpustakaan):
-    def __init__(self, kode, judul, tahun, sutradara, penerbit):
-        super().__init__(kode, tahun, judul, penerbit)
-        self.sutradara = sutradara
-    
-    def tampilkan(self, no):
-        print(f"Koleksi nomor{no}: \n Jenis Koleksi: DVD \n Kode Koleksi: {self.kode} \n Judul DVD: {self.judul} \n Tahun terbit: {self.tahun} \n Sutradara: {self.sutradara} \n Penerbit: {self.penerbit} ")
+    def tampilkan_info(self):
+        print(f"Jenis        : DVD Film Dokumenter")
+        print(f"Kode Koleksi : {self.kode}")
+        print(f"Judul        : {self.judul}")
+        print(f"Bidang Ilmu  : {self.bidang_ilmu}")
+        print(f"Durasi       : {self.durasi}")
+        print(f"Tahun        : {self.tahun}")
