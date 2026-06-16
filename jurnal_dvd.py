@@ -5,9 +5,9 @@ class Jurnal(Koleksi):
         super().__init__(kode, tahun, judul, penerbit)
         self.bidang_studi = bidang_studi
         self.impact_factor = impact_factor
-    def tampilkan(self, no):
+    def tampilkan(self):
         return (
-            f"{no}. Jenis : Jurnal\n"
+            f"Jenis : Jurnal\n"
             f"Kode : {self.kode}\n"
             f"Judul : {self.judul}\n"
             f"Tahun : {self.tahun}\n"
@@ -21,9 +21,9 @@ class DVDFilm(Koleksi):
         super().__init__(kode, tahun, judul, penerbit)
         self.bidang_ilmu = bidang_ilmu
         self.durasi = durasi
-    def tampilkan(self, no):
+    def tampilkan(self):
         return (
-            f"{no}. Jenis : DVD Film Dokumenter\n"
+            f"Jenis : DVD Film Dokumenter\n"
             f"Kode : {self.kode}\n"
             f"Judul : {self.judul}\n"
             f"Bidang Ilmu : {self.bidang_ilmu}\n"

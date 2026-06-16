@@ -56,13 +56,9 @@ class PerpustakaanManager:    # Class untuk mengelola data perpustakaan
             return
 
         for i, koleksi in enumerate(self.daftar, start=1):
-            try:
-                teks = koleksi.tampilkan(i)
-            except TypeError:
-                teks = koleksi.tampilkan()
-            print(teks)
+            print(f"{i}.")
+            print(koleksi.tampilkan())
             print("-")
-
     def hapus(self):
         kode = input("Masukkan kode koleksi yang akan dihapus: ").strip()
         for i, koleksi in enumerate(self.daftar):
@@ -72,7 +68,3 @@ class PerpustakaanManager:    # Class untuk mengelola data perpustakaan
                 return True
         print("Kode tidak ditemukan.")
         return False
-
-
-# Backwards compatibility: older code may expect `Perpustakaan` class name
-Perpustakaan = PerpustakaanManager

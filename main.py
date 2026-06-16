@@ -1,9 +1,6 @@
 from perpustakaan import PerpustakaanManager
-
-# Inisialisasi perpustakaan manager
 perpus = PerpustakaanManager()
 
-# Main program
 while True:
     print("===== MENU PERPUSTAKAAN =====")
     print("1. Tambah Koleksi")

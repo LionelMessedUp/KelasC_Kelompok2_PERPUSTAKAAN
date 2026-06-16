@@ -6,9 +6,9 @@ class Buku(Koleksi):
         super().__init__(kode, tahun, judul, penerbit)
         self.pengarang = pengarang
 
-    def tampilkan(self, no):
+    def tampilkan(self):
         return (
-            f"{no}. Jenis : Buku\n"
+            f"Jenis : Buku\n"
             f"Kode : {self.kode}\n"
             f"Judul : {self.judul}\n"
             f"Tahun : {self.tahun}\n"
@@ -22,9 +22,9 @@ class Majalah(Koleksi):
         super().__init__(kode, tahun, judul, penerbit)
         self.edisi = edisi
 
-    def tampilkan(self, no):
+    def tampilkan(self):
         return (
-            f"{no}. Jenis : Majalah\n"
+            f"Jenis : Majalah\n"
             f"Kode : {self.kode}\n"
             f"Judul : {self.judul}\n"
             f"Tahun : {self.tahun}\n"
