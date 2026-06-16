@@ -1,14 +1,14 @@
 from koleksi import Koleksi
 
+
 class Buku(Koleksi):
     def __init__(self, kode, judul, tahun, pengarang, penerbit):
-        super().__init__(kode, judul, tahun)
+        super().__init__(kode, tahun, judul, penerbit)
         self.pengarang = pengarang
-        self.penerbit = penerbit
 
-    def tampilkan(self):
+    def tampilkan(self, no):
         return (
-            f"Jenis : Buku\n"
+            f"{no}. Jenis : Buku\n"
             f"Kode : {self.kode}\n"
             f"Judul : {self.judul}\n"
             f"Tahun : {self.tahun}\n"
@@ -17,17 +17,14 @@ class Buku(Koleksi):
         )
 
 
-from koleksi import Koleksi
-
 class Majalah(Koleksi):
     def __init__(self, kode, judul, tahun, penerbit, edisi):
-        super().__init__(kode, judul, tahun)
-        self.penerbit = penerbit
+        super().__init__(kode, tahun, judul, penerbit)
         self.edisi = edisi
 
-    def tampilkan(self):
+    def tampilkan(self, no):
         return (
-            f"Jenis : Majalah\n"
+            f"{no}. Jenis : Majalah\n"
             f"Kode : {self.kode}\n"
             f"Judul : {self.judul}\n"
             f"Tahun : {self.tahun}\n"
