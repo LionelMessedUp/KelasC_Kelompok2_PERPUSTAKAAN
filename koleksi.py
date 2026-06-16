@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class perpustakaan(ABC):
+class koleksi(ABC):
     """Class dasar/abstrak untuk semua koleksi perpustakaan"""
     def __init__(self, kode, tahun, judul, penerbit):
         self.kode = kode
